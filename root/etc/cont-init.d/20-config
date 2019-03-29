@@ -1,0 +1,38 @@
+#!/usr/bin/with-contenv bash
+
+# make folders
+mkdir -p \
+	/downloads/{complete,incomplete} /watch /filebot
+
+# copy config
+[[ ! -f /config/settings.json ]] && cp \
+	/defaults/settings.json /config/settings.json
+
+# copy blocklist-update script
+[[ ! -f /config/blocklist-update.sh ]] && cp \
+	/defaults/blocklist-update.sh /config/blocklist-update.sh
+
+# permissions
+chown abc:abc \
+	/config/settings.json \
+	/config/blocklist-update.sh \
+	/downloads \
+	/downloads/complete \
+	/downloads/incomplete \
+	/watch
+
+chmod 755 /config/blocklist-update.sh
+
+#copie filebot
+[[ ! -f /filebot/FileBot.jar ]] && cp -R \
+	/defaults/filebot/* /filebot
+[[ ! -f /config/postdl.sh ]] && cp \
+	/defaults/postdl.sh /config/postdl.sh
+
+chmod 755 /filebot/filebot.sh /config/postdl.sh
+chown abc:abc -R /filebot /config/postdl.sh
+
+mkdir -p \
+	 /downloads/Media/{Movies,TV,Animes,Music}
+
+chown abc:abc -R /downloads/Media
