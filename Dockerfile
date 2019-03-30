@@ -21,6 +21,7 @@ RUN \
 	java-jna-native \
 	binutils \
 	wget \
+	nss \
 	transmission-cli \
 	transmission-daemon \
 	unrar \
