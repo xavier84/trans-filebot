@@ -9,9 +9,9 @@ services:
       - TZ=Europe/Paris
       - TRANSMISSION_WEB_HOME=/combustion-release/ #optional
     volumes:
-      - /home/xavier/docker:/config
-      - /home/xavier/docker:/downloads
-      - /home/xavier/docker:/watch
+      - /home/xavier/docker/config:/config
+      - /home/xavier/docker/downloads:/downloads
+      - /home/xavier/docker/watch:/watch
     ports:
       - 9091:9091
       - 51413:51413
