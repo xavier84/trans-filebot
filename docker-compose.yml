@@ -1,7 +1,7 @@
 version: "2"
 services:
   transmission:
-    image: transmission-filebot
+    image: xavier84/transmission-filebot
     container_name: transmission-filebot
     environment:
       - PUID=1000
