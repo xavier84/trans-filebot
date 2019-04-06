@@ -1,7 +1,0 @@
-pipeline:
-  build:
-    image: xataz/docker-drone-plugin
-    repo: xavier84/transmission-filebot
-    action: build
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
